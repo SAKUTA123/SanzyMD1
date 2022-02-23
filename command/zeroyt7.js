@@ -153,67 +153,6 @@ const ftroli ={key: {fromMe: false,"participant":"0@s.whatsapp.net", "remoteJid"
         
 switch(command) {
 
-case 'menu': case 'help': {
-txt =` Hai Kak Saya Sanzy Botz Multi Device
-Ada Yang Bisa Saya Bantu?
-
-╭─「  *BOT INFO* 」
-│• Prefix : 「 Multi prefix 」
-│ • Runtime : ${runtime(process.uptime())}
-│ • Calender: ${tanggal(new Date())}
-│ • Kecepatan ${latensi.toFixed(4)}
-│ • RAM: ${formatp(os.totalmem() - os.freemem())} / ${formatp(os.totalmem())}
-╰────────────┈⭓
-
-*THANKS TO*
-⭔ DikaArdnt
-⭔ Zeeoneofc
-⭔ ZeroYT7
-⭔ Fatih Arridho
-⭔ Sanzy YT
-⭔ Baileys#md
-⭔ All Friends
-⭔ All Subscribers
-`
-let message = await prepareWAMessageMedia({ image: fs.readFileSync('./image/sanzy2.jpg') }, { upload: zeroyt7.waUploadToServer })
-const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
-templateMessage: {
-hydratedTemplate: {
-imageMessage: message.imageMessage,
-hydratedContentText: txt,
-hydratedButtons: [{
-urlButton: {
-displayText: '𝑹𝒆𝒔 𝑨𝒑𝒊',
-url: 'https://sanzykey.herokuapp.com/api'
-}
-}, {
-urlButton: {
-displayText: '𝒀𝒐𝒖𝒕𝒖𝒃𝒆 𝑶𝒘𝒏𝒆𝒓',
-url: 'https://youtube.com/c/sanzyyt/'
-}
-}, {
-quickReplyButton: {
-displayText: '𝑺𝒕𝒂𝒕𝒖𝒔 𝑩𝒐𝒕',
-id: 'ping'
-}
-}, {
-quickReplyButton: {
-displayText: '𝑪𝒐𝒏𝒕𝒂𝒄𝒕 𝑶𝒘𝒏𝒆𝒓',
-id: 'owner'
-}  
-}, {
-quickReplyButton: {
-displayText: '𝑺𝒄𝒓𝒊𝒑𝒕',
-id: 'sc'
-}
-}]
-}
-}
-}), { userJid: m.chat, quoted: m })
-zeroyt7.relayMessage(m.chat, template.message, { messageId: template.key.id })
-}
-break
-
 case 'allmenu': case 'menuall': {
 txt =`┌──⭓Group Menu
 │ ${simbol} ${prefix}revoke
